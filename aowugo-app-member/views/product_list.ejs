@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>測試網頁</title>
+<!-- 連結思源中文及css -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+<link href="/css/menu.css" rel="stylesheet"/>  
+<link href="/css/main.css" rel="stylesheet"/>      
+<!------------------------->
+</head>
+   
+<body>
+    <!--**************************-->
+    <div class="container">    
+        <!--~~~~~~~~~~~~~~~~~-->
+        <div class="header">           
+        </div>        
+        
+        <!--~~~~~~~~~~~~~~~~~-->        
+        <ul id="navigation">        
+            <li><a href="/">返回主頁</a></li> 
+        </ul>
+        
+        <!--~~~~~~~~~~~~~~~~~--> 
+        <div class="content">
+
+            <h2>產品清單 </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th width="20%">產品編號</th>
+                        <th width="35%">產品名稱</th>
+                        <th width="15%">單價</th>
+                        <th width="15%">庫存量</th>
+                        <th width="15%">安全存量</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<items.length; i++) {%>
+                        <tr>
+                            <td><a href="/product/one/<%= items[i].prono %>"><%= items[i].prono %></a></td>
+                            <td><%= items[i].proname %></td>
+                            <td><%= items[i].price %></td>
+                            <td><%= items[i].stockamt %></td>
+                            <td><%= items[i].safeamt %></td>                        
+                        </tr> 
+                    <% } %> 
+                </tbody>
+            </table>   
+              
+               
+        </div>       
+        
+        <!--~~~~~~~~~~~~~~~~~--> 
+        <div class="footer">
+            NTUB imd, 2019.    
+        </div>  
+    </div>
+    <!--**************************-->    
+</body>
+   
+</html>
