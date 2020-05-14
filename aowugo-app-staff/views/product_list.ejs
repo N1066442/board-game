@@ -25,26 +25,26 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-            <h2>產品清單 </h2>
+            <h2>菜單</h2>
 
             <table>
                 <thead>
                     <tr>
-                        <th width="20%">產品編號</th>
-                        <th width="35%">產品名稱</th>
-                        <th width="15%">單價</th>
-                        <th width="15%">庫存量</th>
-                        <th width="15%">安全存量</th>                        
+                        <th width="20%">餐點編號</th>
+                        <th width="35%">類別編號</th>
+                        <th width="15%">餐點名稱</th>
+                        <th width="15%">餐點價格</th>
+                        <th width="15%">餐點圖片</th>                        
                     </tr>
                 </thead>
                 <tbody>
                     <% for(var i=0; i<items.length; i++) {%>
                         <tr>
-                            <td><a href="/product/one/<%= items[i].prono %>"><%= items[i].prono %></a></td>
-                            <td><%= items[i].proname %></td>
-                            <td><%= items[i].price %></td>
-                            <td><%= items[i].stockamt %></td>
-                            <td><%= items[i].safeamt %></td>                        
+                            <td><a><%= items[i].foodID %></a></td>
+                            <td><%= items[i].itemID %></td>
+                            <td><%= items[i].foodName %></td>
+                            <td><%= items[i].foodPoint %></td>
+                            <td><%= items[i].foodImg %></td>                        
                         </tr> 
                     <% } %> 
                 </tbody>

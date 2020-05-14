@@ -9,7 +9,7 @@ const sql = require('./asyncDB');
 var list = async function(){
     var result=[];
 	
-    await sql('SELECT * FROM product ORDER BY prono')
+    await sql('SELECT * FROM food ORDER BY foodID')
         .then((data) => {            
             result = data.rows;  
         }, (error) => {
