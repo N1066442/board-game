@@ -3,7 +3,7 @@
 #navigation {
     margin: 0;
     padding: 0 1em;
-    background: #000;
+    background: rgb(105, 46, 7);
     height: 3em;
     list-style: none;
 }
@@ -14,11 +14,13 @@
     margin-right: 2em;
     padding: 0 1em;
 }
-
+/*---------------------------*/
+/*菜單ㄉ字體設定          */
+/*---------------------------*/
 #navigation > li > a {
     float: left;
     height: 100%;
-    color: #c60;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     line-height: 3;
     text-transform: uppercase;

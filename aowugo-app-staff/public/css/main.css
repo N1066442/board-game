@@ -6,7 +6,8 @@
 /*---------------------------*/
 html, body{
     font-family: 'Noto Sans TC', sans-serif; 
-    background: var(--color-primary-2);
+    /*background: var(--color-primary-2);*/
+    background: url(../imgs/header.png)
 }
 
 /*---------------------------*/
@@ -24,9 +25,14 @@ div.container{
 /*---------------------------*/
 div.header{
     height: 150px;
-    background: url(../imgs/header.jpg);
+    background: url(../imgs/header.png)
 }
 
+/*div.background{
+    height: 150px;
+    background: url(../imgs/background.jpg)
+}
+*/
 
 /*---------------------------*/
 /* 編排<內文>區塊             */
