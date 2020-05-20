@@ -13,7 +13,11 @@ var list = async function(){
     await sql('SELECT * FROM staff')
         .then((data) => {            
             result = data.rows;
+<<<<<<< HEAD
             //console.log(result)  ;
+=======
+            console.log(result)  ;
+>>>>>>> viewdata-staffversion
         }, (error) => {
             result = null;
             //console.log("除去錯誤")  ;
@@ -22,6 +26,7 @@ var list = async function(){
     return result;
 }
 
+<<<<<<< HEAD
 //------------------------------------------
 //執行資料庫動作的函式-新增員工資料
 //------------------------------------------
@@ -88,3 +93,6 @@ var update = async function(newData){
     return results;
 }
 module.exports = {list, add, remove, query, update}
+=======
+module.exports = {list}
+>>>>>>> viewdata-staffversion

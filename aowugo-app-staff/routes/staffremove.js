@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+<<<<<<< HEAD
 //增加引用函式
 const staff = require('./utility/staff');
 
@@ -15,6 +16,11 @@ router.post('/', function(req, res, next) {
             res.render('removeFail');     //導向錯誤頁面
         }
     })    
+=======
+//接收GET請求
+router.get('/', function(req, res, next) {
+    res.render('product_remove_form'); 
+>>>>>>> viewdata-staffversion
 });
 
 module.exports = router;

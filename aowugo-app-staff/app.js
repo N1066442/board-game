@@ -15,6 +15,7 @@ var stafflist = require('./routes/stafflist');
 var storelist = require('./routes/storelist');
 var orderlist = require('./routes/orderlist');
 var checkoutlist = require('./routes/checkoutlist');
+<<<<<<< HEAD
 var staffadd = require('./routes/staffadd');
 var staffaddform = require('./routes/staffaddform');
 var staffremoveform = require('./routes/staffremoveform');
@@ -22,6 +23,8 @@ var staffremove = require('./routes/staffremove');
 var staffupdateno = require('./routes/staffupdateno');
 var staffupdateform = require('./routes/staffupdateform');
 var staffupdate = require('./routes/staffupdate');
+=======
+>>>>>>> viewdata-staffversion
 var product_one = require('./routes/product_one');
 var product_page = require('./routes/product_page');
 var product_query_form = require('./routes/product_query_form');
@@ -60,6 +63,7 @@ app.use('/staff/list', stafflist);
 app.use('/store/list', storelist);
 app.use('/order/list', orderlist);
 app.use('/checkout/list', checkoutlist);
+<<<<<<< HEAD
 app.use('/staff/add', staffadd);
 app.use('/staff/add/form', staffaddform);
 app.use('/staff/remove/form', staffremoveform);
@@ -67,6 +71,8 @@ app.use('/staff/remove', staffremove)
 app.use('/staff/update/no', staffupdateno);
 app.use('/staff/update/form', staffupdateform);
 app.use('/staff/update', staffupdate);
+=======
+>>>>>>> viewdata-staffversion
 app.use('/product/one', product_one);
 app.use('/product/page', product_page);
 app.use('/product/query/form', product_query_form);

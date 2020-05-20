@@ -7,9 +7,15 @@
 html, body{
     font-family: 'Noto Sans TC', sans-serif; 
     /*background: var(--color-primary-2);*/
-    background: url(../imgs/header.png)
+    background:url(../imgs/background.png);
 }
-
+ /*background{
+    background-image:url(../imgs/background.png);
+    width: 773px;
+    height: 449px;
+    background-repeat:no-repeat
+}
+*/
 /*---------------------------*/
 /* 編排<容器>區塊             */
 /*---------------------------*/
@@ -28,11 +34,6 @@ div.header{
     background: url(../imgs/header.png)
 }
 
-/*div.background{
-    height: 150px;
-    background: url(../imgs/background.jpg)
-}
-*/
 
 /*---------------------------*/
 /* 編排<內文>區塊             */
