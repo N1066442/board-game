@@ -9,11 +9,11 @@ const sql = require('./asyncDB');
 var list = async function(){
     var result=[];
 
-    //console.log("查詢菜單");
-    await sql('SELECT * FROM food ORDER BY foodID')
+    console.log("查詢菜單");
+    await sql('SELECT * FROM food')
         .then((data) => {            
             result = data.rows;
-            //console.log(result)  ;
+            console.log(result)  ;
         }, (error) => {
             result = null;
             //console.log("除去錯誤")  ;

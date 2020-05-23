@@ -7,7 +7,7 @@ const sql = require('./asyncDB');
 //執行資料庫動作的函式-傳回所有產品資料
 //------------------------------------------
 var list = async function(){
-    var result=[];
+    var result="";
 
     //console.log("查詢菜單");
     await sql('SELECT * FROM staff')
