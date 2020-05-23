@@ -6,17 +6,14 @@ const sql = require('./asyncDB');
 //------------------------------------------
 //執行資料庫動作的函式-傳回所有產品資料
 //------------------------------------------
-var list = async function(foodID){
+var list = async function(){
     var result=[];
-
-    console.log("查詢菜單");
+	
     await sql('SELECT * FROM food ORDER BY foodID')
         .then((data) => {            
-            result = data.rows;
-            console.log(result)  ;
+            result = data.rows;  
         }, (error) => {
             result = null;
-            console.log("除去錯誤")  ;
         });
 		
     return result;
