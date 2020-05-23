@@ -10,7 +10,7 @@ var list = async function(){
     var result=[];
 
     console.log("查詢訂單");
-    await sql('SELECT * FROM "order" ')
+    await sql('SELECT * FROM ord ')
         .then((data) => {            
             result = data.rows;
             console.log(result);
