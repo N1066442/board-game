@@ -4,12 +4,12 @@
 const sql = require('./asyncDB');
 
 //------------------------------------------
-//執行資料庫動作的函式-傳回所有產品資料
+//執行資料庫動作的函式-傳回所有員工資料
 //------------------------------------------
 var list = async function(){
     var result="";
 
-    //console.log("查詢菜單");
+    //console.log("查詢員工");
     await sql('SELECT * FROM staff')
         .then((data) => {            
             result = data.rows;
@@ -38,7 +38,7 @@ var add = async function(newData){
     return result;
 }
 //----------------------------------
-// 刪除商品
+// 刪除員工
 //----------------------------------
 var remove = async function(userName){
     var result;
@@ -53,7 +53,7 @@ var remove = async function(userName){
     return result;
 }
 //------------------------------------------
-//執行資料庫動作的函式-取出單一商品
+//執行資料庫動作的函式-取出單一員工
 //------------------------------------------
 var query = async function(userName){
     var result={};
