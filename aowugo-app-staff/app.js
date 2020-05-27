@@ -13,30 +13,25 @@ var usersRouter = require('./routes/users');
 var food_list = require('./routes/food_list');
 var food_add = require('./routes/food_add');
 var food_add_form = require('./routes/food_add_form');
+var food_remove = require('./routes/food_remove');
+var food_remove_form = require('./routes/food_remove_form');
 var stafflist = require('./routes/stafflist');
 var staffadd = require('./routes/staffadd');
 var staffaddform = require('./routes/staffaddform');
-var storelist = require('./routes/storelist');
-var storeadd = require('./routes/storeadd');
-var storeaddform = require('./routes/storeaddform');
-var orderlist = require('./routes/orderlist');
-var checkoutlist = require('./routes/checkoutlist');
 var staffremoveform = require('./routes/staffremoveform');
 var staffremove = require('./routes/staffremove');
 var staffupdateno = require('./routes/staffupdateno');
 var staffupdateform = require('./routes/staffupdateform');
 var staffupdate = require('./routes/staffupdate');
-var product_one = require('./routes/product_one');
-var product_page = require('./routes/product_page');
-var product_query_form = require('./routes/product_query_form');
-var product_query = require('./routes/product_query');
-var product_add_form = require('./routes/product_add_form');
-var product_add = require('./routes/product_add');
-var product_remove_form = require('./routes/product_remove_form');
-var product_remove = require('./routes/product_remove');
-var product_update_no = require('./routes/product_update_no');
-var product_update_form = require('./routes/product_update_form');
-var product_update = require('./routes/product_update');
+var storelist = require('./routes/storelist');
+var storeadd = require('./routes/storeadd');
+var storeaddform = require('./routes/storeaddform');
+var storeremove = require('./routes/storeremove');
+var storeremoveform = require('./routes/storeremoveform');
+var orderlist = require('./routes/orderlist');
+var checkoutlist = require('./routes/checkoutlist');
+
+
 
 //------------------------------------------------------------
 
@@ -62,30 +57,24 @@ app.use('/users', usersRouter);
 app.use('/food/list', food_list);
 app.use('/food/add', food_add);
 app.use('/food/add/form', food_add_form);
+app.use('/food/remove', food_remove);
+app.use('/food/remove/form', food_remove_form);
 app.use('/staff/list', stafflist);
 app.use('/staff/add', staffadd);
 app.use('/staff/add/form', staffaddform);
 app.use('/store/list', storelist);
 app.use('/store/add', storeadd);
 app.use('/store/add/form', storeaddform);
-app.use('/order/list', orderlist);
-app.use('/checkout/list', checkoutlist);
+app.use('/store/remove', storeremove);
+app.use('/store/remove/form', storeremoveform);
 app.use('/staff/remove/form', staffremoveform);
 app.use('/staff/remove', staffremove)
 app.use('/staff/update/no', staffupdateno);
 app.use('/staff/update/form', staffupdateform);
 app.use('/staff/update', staffupdate);
-app.use('/product/one', product_one);
-app.use('/product/page', product_page);
-app.use('/product/query/form', product_query_form);
-app.use('/product/query', product_query);
-app.use('/product/add/form', product_add_form);
-app.use('/product/add', product_add);
-app.use('/product/remove/form', product_remove_form);
-app.use('/product/remove', product_remove);
-app.use('/product/update/no', product_update_no);
-app.use('/product/update/form', product_update_form);
-app.use('/product/update', product_update);
+app.use('/order/list', orderlist);
+app.use('/checkout/list', checkoutlist);
+
 
 //-----------------------------------------
 

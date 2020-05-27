@@ -36,4 +36,19 @@ var add = async function(newData){
 		
     return result;
 }
-module.exports = {list, add}
+//----------------------------------
+// 刪除餐點
+//----------------------------------
+var remove = async function(foodID){
+    var result;
+
+    await sql('DELETE FROM food WHERE foodID = $1', [foodID])
+        .then((data) => {
+            result = data.rowCount;  
+        }, (error) => {
+            result = -1;
+        });
+		
+    return result;
+}
+module.exports = {list, add, remove}
