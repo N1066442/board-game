@@ -10,7 +10,22 @@ var usersRouter = require('./routes/users');
 // 增加引用模組
 //------------------------------------------------------------
 
-var product_list = require('./routes/product_list');
+var food_list = require('./routes/food_list');
+var food_add = require('./routes/food_add');
+var food_add_form = require('./routes/food_add_form');
+var stafflist = require('./routes/stafflist');
+var staffadd = require('./routes/staffadd');
+var staffaddform = require('./routes/staffaddform');
+var storelist = require('./routes/storelist');
+var storeadd = require('./routes/storeadd');
+var storeaddform = require('./routes/storeaddform');
+var orderlist = require('./routes/orderlist');
+var checkoutlist = require('./routes/checkoutlist');
+var staffremoveform = require('./routes/staffremoveform');
+var staffremove = require('./routes/staffremove');
+var staffupdateno = require('./routes/staffupdateno');
+var staffupdateform = require('./routes/staffupdateform');
+var staffupdate = require('./routes/staffupdate');
 var product_one = require('./routes/product_one');
 var product_page = require('./routes/product_page');
 var product_query_form = require('./routes/product_query_form');
@@ -39,12 +54,27 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/users', usersRouter);
 //-----------------------------------------
 // 設定模組使用方式
 //-----------------------------------------
 
-app.use('/product/list', product_list);
+app.use('/food/list', food_list);
+app.use('/food/add', food_add);
+app.use('/food/add/form', food_add_form);
+app.use('/staff/list', stafflist);
+app.use('/staff/add', staffadd);
+app.use('/staff/add/form', staffaddform);
+app.use('/store/list', storelist);
+app.use('/store/add', storeadd);
+app.use('/store/add/form', storeaddform);
+app.use('/order/list', orderlist);
+app.use('/checkout/list', checkoutlist);
+app.use('/staff/remove/form', staffremoveform);
+app.use('/staff/remove', staffremove)
+app.use('/staff/update/no', staffupdateno);
+app.use('/staff/update/form', staffupdateform);
+app.use('/staff/update', staffupdate);
 app.use('/product/one', product_one);
 app.use('/product/page', product_page);
 app.use('/product/query/form', product_query_form);

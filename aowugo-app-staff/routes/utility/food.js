@@ -4,12 +4,12 @@
 const sql = require('./asyncDB');
 
 //------------------------------------------
-//執行資料庫動作的函式-傳回所有產品資料
+//執行資料庫動作的函式-傳回所有餐點資料
 //------------------------------------------
 var list = async function(){
     var result=[];
 
-    console.log("查詢菜單");
+    console.log("查詢餐點");
     await sql('SELECT * FROM food')
         .then((data) => {            
             result = data.rows;
@@ -21,5 +21,19 @@ var list = async function(){
 		
     return result;
 }
+//------------------------------------------
+// 新增餐點
+//------------------------------------------
+var add = async function(newData){
+    var result;
 
-module.exports = {list}
+    await sql('INSERT INTO food (foodID, itemID, foodName, foodPoint, foodImg) VALUES ($1, $2, $3, $4, $5)', [newData.foodID, newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
+        .then((data) => {
+            result = 0;  
+        }, (error) => {
+            result = -1;
+        });
+		
+    return result;
+}
+module.exports = {list, add}
