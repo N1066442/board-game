@@ -36,4 +36,19 @@ var add = async function(newData){
 		
     return result;
 }
-module.exports = {list, add}
+//----------------------------------
+// 刪除員工
+//----------------------------------
+var remove = async function(storeID){
+    var result;
+
+    await sql('DELETE FROM storeinformation WHERE storeID = $1', [storeID])
+        .then((data) => {
+            result = data.rowCount;  
+        }, (error) => {
+            result = -1;
+        });
+		
+    return result;
+}
+module.exports = {list, add, remove}
