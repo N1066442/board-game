@@ -51,4 +51,39 @@ var remove = async function(foodID){
 		
     return result;
 }
-module.exports = {list, add, remove}
+//------------------------------------------
+//執行資料庫動作的函式-取出單一餐點
+//------------------------------------------
+var query = async function(foodID){
+    var result={};
+    
+    await sql('SELECT * FROM food WHERE foodID = $1', [foodID])
+        .then((data) => {
+            if(data.rows.length > 0){
+                result = data.rows[0];   
+            }else{
+                result = -1;
+            }    
+        }, (error) => {
+            result = null;
+        });
+		
+    return result;
+}
+
+//----------------------------------
+// 更新餐點資料
+//----------------------------------
+var update = async function(newData){
+    var results;
+
+    await sql('UPDATE food SET itemID=$1, foodName=$2, foodPoint=$3, foodImg=$4 WHERE foodID = $5', [newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
+        .then((data) => {
+            results = data.rowCount;  
+        }, (error) => {
+            results = -1;
+        });
+		
+    return results;
+}
+module.exports = {list, add, remove, query, update}

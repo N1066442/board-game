@@ -73,7 +73,7 @@ var query = async function(userName){
 }
 
 //----------------------------------
-// 更新商品
+// 更新員工資料
 //----------------------------------
 var update = async function(newData){
     var results;
