@@ -10,9 +10,9 @@ router.post('/', function(req, res, next) {
 
     var newData={
         userName:userName,                   //員工姓名
-        staffPhone: Number(req.body.staffPhone),     //取得
-        nickName: req.body.nickName, //取得價格
-        password: req.body.password  //取得盤點日期
+        staffPhone: req.body.staffPhone,     //取得員工電話
+        nickName: req.body.nickName,         //取得暱稱
+        password: req.body.password          //取得密碼
     } 
     
     staff.update(newData).then(d => {
