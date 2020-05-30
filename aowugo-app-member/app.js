@@ -14,7 +14,7 @@ var storelist = require('./routes/storelist') ;
 var memberlist = require('./routes/memberlist') ;
 var member_add_form = require('./routes/member_add_form');
 var member_add = require('./routes/member_add');
-
+var member_add_form2 = require('./routes/member_add_form2');
 
 //------------------------------------------------------------
 
@@ -42,7 +42,7 @@ app.use('/store/list', storelist);
 app.use('/member/list', memberlist);
 app.use('/member/add/form', member_add_form);
 app.use('/member/add', member_add);
-
+app.use('/member/add/form2', member_add_form2);
 //-----------------------------------------
 
 //----------------------------------------

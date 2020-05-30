@@ -35,18 +35,24 @@
                     <span class="name">產品名稱: </span>
                     <span class="value"><input type="text" name="proname" ></span>
                     <br/>
-                                                        
+
+                    <span class="name">產品型別: </span>
+                    <span class="value"> 
+                        <select name="typno" >
+                            <% for(var i=0; i<result.protype.length; i++) {%>
+                                <option value="<%= result.protype[i].typno %>"><%= result.protype[i].typename %></option>
+                            <% } %> 
+                        </select>
+                    </span>
+                    <br/>
+
                     <span class="name">單價: </span>
                     <span class="value"><input type="number" name="price" ></span>
                     <br/>
-                                            
-                    <span class="name">盤點日期: </span>
-                    <span class="value"><input type="date" name="inventorydate" ></span>
-                    <br/>	    
-                                    
+
                     <span class="name"></span>
                     <span class="value"><input type="submit" value="新增" ></span>    
-                </div>    
+                </div>
             </form>
 
             <p>
