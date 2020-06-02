@@ -27,7 +27,7 @@ var list = async function(){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO member (prono, proname, price, inventorydate) VALUES ($1, $2, $3, $4)', [newData.prono, newData.proname, newData.price, newData.inventorydate])
+    await sql('INSERT INTO member (prono, proname, price, inventorydate) VALUES ($1, $2, $3, $4)', [newData.memberPhone, newData.memberName, newData.lineID, newData.gender, newData.mail, newData.birthday, newData.point, newData.creationDate])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -65,7 +65,7 @@ var getDropdownData = async function(){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO member (prono, proname, typno, price) VALUES ($1, $2, $3, $4)', [newData.prono, newData.proname, newData.typno, newData.price])
+    await sql('INSERT INTO member (prono, proname, typno, price) VALUES ($1, $2, $3, $4)', [newData.memberPhone, newData.memberName, newData.lineID, newData.gender, newData.mail, newData.birthday, newData.point, newData.creationDate])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -89,4 +89,39 @@ var remove = async function(prono){
 		
     return result;
 }
-module.exports = {list,add,getDropdownData,remove}
+//------------------------------------------
+//執行資料庫動作的函式-取出單一商品
+//------------------------------------------
+var query = async function(prono){
+    var result={};
+    
+    await sql('SELECT * FROM member WHERE prono = $1', [prono])
+        .then((data) => {
+            if(data.rows.length > 0){
+                result = data.rows[0];   
+            }else{
+                result = -1;
+            }    
+        }, (error) => {
+            result = null;
+        });
+		
+    return result;
+}
+
+//----------------------------------
+// 更新商品
+//----------------------------------
+var update = async function(newData){
+    var results;
+
+    await sql('UPDATE member SET proname=$1, price=$2, inventorydate=$3 WHERE prono = $4', [newData.memberPhone, newData.memberName, newData.lineID, newData.gender, newData.mail, newData.birthday, newData.point, newData.creationDate])
+        .then((data) => {
+            results = data.rowCount;  
+        }, (error) => {
+            results = -1;
+        });
+		
+    return results;
+}
+module.exports = {list, add, getDropdownData, remove, query, update}

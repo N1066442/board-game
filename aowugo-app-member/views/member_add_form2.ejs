@@ -28,7 +28,7 @@
 
             <form action = "/member/add" method = "post">
                 <div class="form">
-                    <span class="name">會員編號: </span>
+                    <span class="name">會員手機號碼: </span>
                     <span class="value"><input type="text" name="prono" maxlength="4"></span>
                     <br/>
                                     
@@ -36,7 +36,7 @@
                     <span class="value"><input type="text" name="proname" ></span>
                     <br/>
 
-                    <span class="name">產品型別: </span>
+                    <span class="name">性別: </span>
                     <span class="value"> 
                         <select name="typno" >
                             <% for(var i=0; i<result.protype.length; i++) {%>
@@ -46,7 +46,7 @@
                     </span>
                     <br/>
 
-                    <span class="name">單價: </span>
+                    <span class="name">點數: </span>
                     <span class="value"><input type="number" name="price" ></span>
                     <br/>
 

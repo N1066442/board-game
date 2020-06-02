@@ -24,22 +24,20 @@
         
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
-            <h2>會員資料刪除</h2> 
 
-            <form action = "/member/remove" method = "post">
+            <h2>會員資料更新</h2>
+
+            <form action = "/member/update/form" method = "get">
                 <div class="form">
-                    <span class="name">會員手機號碼: </span>
-                    <span class="value"><input type="text" name="prono" maxlength="4"></span>
-                    <br/>
-                                                    
+                    <span class="name">會員手機號碼:</span>
+                    <span class="value"><input type="text" name="memberPhone" ></span>
+                    <br/>    
+            
                     <span class="name"></span>
-                    <span class="value"><input type="submit" value="刪除" ></span>    
+                    <span class="value"><input type="submit" value="查詢" ></span>    
                 </div>    
-            </form>
-
-            <p>
-                這裡可以加入公司介紹或產品訊息或某功能特有的資訊內容.            
-            </p>       
+            </form> 
+              
                
         </div>       
         
