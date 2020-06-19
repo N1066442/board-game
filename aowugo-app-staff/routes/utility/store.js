@@ -27,7 +27,7 @@ var list = async function(){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO storeinformation (storeID, storeName, storeAddress, phoneNo, vacantTable, businessHours, staffPhone, wifi, socket, provideMeals, outsideFood, chargringStandards) VALUES ($1, $2, $3, $4, $5, $6, $7, $7, $8, $9, $9, $10, $11, $12)', [newData.storeID, newData.storeNamemID, newData.storeAddress, newData.phoneNo, newData.vacantTable, newData.businessHours, newData.staffPhone, newData.wifi, newData.socket, newData.provideMeals,newData.outsideFood, newData.chargringStandards])
+    await sql('INSERT INTO storeinformation ("storeID", "storeName", "storeAddress", "phoneNo", "vacantTable", "businessHours", "wifi", "socket", "provideMeals", "outsideFood", "chargingStandards") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)', [newData.storeID, newData.storeNamemID, newData.storeAddress, newData.phoneNo, newData.vacantTable, newData.businessHours, newData.wifi, newData.socket, newData.provideMeals,newData.outsideFood, newData.chargringStandards])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -42,7 +42,7 @@ var add = async function(newData){
 var remove = async function(storeID){
     var result;
 
-    await sql('DELETE FROM storeinformation WHERE storeID = $1', [storeID])
+    await sql('DELETE FROM storeinformation WHERE "storeID"= $1', [storeID])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -57,7 +57,7 @@ var remove = async function(storeID){
 var query = async function(storeID){
     var result={};
     
-    await sql('SELECT * FROM storeinformation WHERE storeID = $1', [storeID])
+    await sql('SELECT * FROM storeinformation WHERE "storeID" = $1', [storeID])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];   
@@ -77,7 +77,7 @@ var query = async function(storeID){
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE storeinformation SET storeName=$1, storeAddress=$2, phoneNo=$3 , vacantTable=$4, businessHours=$5, staffPhone=$6, wifi=$7, socket=$8, provideMeals=$9, outsideFood=$10, chargringStandards=$11 WHERE storeID = $12', [newData.storeID, newData.storeName, newData.storeAddress, newData.phoneNo, newData.vacantTable, newData.businessHours, newData.staffPhone, newData.wifi, newData.socket, newData.provideMeals, newData.outsideFood, newData.chargringStandards])
+    await sql('UPDATE storeinformation SET "storeName"=$1, "storeAddress"=$2, "phoneNo"=$3 , "vacantTable"=$4, "businessHours"=$5, "wifi"=$6, "socket"=$7, "provideMeals"=$8, "outsideFood"=$9, "chargringStandards"=$10 WHERE "storeID" = $11', [newData.storeID, newData.storeName, newData.storeAddress, newData.phoneNo, newData.vacantTable, newData.businessHours, newData.wifi, newData.socket, newData.provideMeals, newData.outsideFood, newData.chargringStandards])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {

@@ -15,7 +15,6 @@ router.post('/', function(req, res, next) {
         phoneNo: req.body.phoneNo,          //取得電話號碼
         vacantTable: req.body.vacantTable,  //取得空桌數
         businessHours: req.body.businessHours,  //取得營業時間
-        staffPhone: req.body.staffPhone,        //取得員工電話
         wifi: req.body.wifi,                    //取得提供wifi
         socket: req.body.socket,                //取得提供插座
         provideMeals: req.body.provideMeals,    //取得提供餐點
