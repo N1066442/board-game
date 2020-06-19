@@ -35,6 +35,7 @@ var foodupdateno = require('./routes/foodupdateno');
 var foodupdateform = require('./routes/foodupdateform');
 var foodupdate = require('./routes/foodupdate');
 var orderlist = require('./routes/orderlist');
+var orderdetailone = require('./routes/orderdetailone');
 var checkoutlist = require('./routes/checkoutlist');
 
 
@@ -85,6 +86,7 @@ app.use('/staff/update/no', staffupdateno);
 app.use('/staff/update/form', staffupdateform);
 app.use('/staff/update', staffupdate);
 app.use('/order/list', orderlist);
+app.use('/orderdetailone/list', orderdetailone);
 app.use('/checkout/list', checkoutlist);
 
 

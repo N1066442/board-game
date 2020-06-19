@@ -12,13 +12,14 @@ router.post('/', function(req, res, next) {
     var password = req.body.password;                  //取得密碼
     
     // 建立一個新資料物件
+
     var newData={
         userName:userName,
         staffPhone:staffPhone,
         nickName:nickName,
         password:password
     } 
-    
+    console.log(newData)
     staff.add(newData).then(d => {
         if (d==0){
             res.render('addSuccess');  //傳至成功頁面

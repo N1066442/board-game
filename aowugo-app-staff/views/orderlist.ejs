@@ -25,31 +25,31 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-             <h2>產品清單 </h2>
+             <h2>訂單</h2>
 
                 <table>
                     <thead>
                         <tr>
-                            <th width="５%">訂單編號</th>
-                            <th width="30%">會員電話</th>
-                            <th width="30%">員工電話</th>
+                            <th width="5%">訂單編號</th>
+                            <th width="15%">會員電話</th>
+                            <th width="15%">員工電話</th>
                             <th width="５%">桌號</th>
                             <th width="10%">總點數</th>  
                             <th width="５%">確認</th> 
-                            <th width="15%">成立時間</th>  
+                            <th width="45%">成立時間</th>  
                                                  
                         </tr>
                     </thead>
                     <tbody>
                         <% for(var i=0; i<items.length; i++) {%>
                             <tr>
-                                <td><%= items[i].orderID %></a></td>
+                                <td><a href="/orderdetail/one/<%= items[i].orderID %>"><%= items[i].orderID %></a></td>
                                 <td><%= items[i].memberPhone %></td>
                                 <td><%= items[i].staffPhone %></td>
                                 <td><%= items[i].tableNo %></td>
                                 <td><%= items[i].total %></td>   
                                 <td><%= items[i].confirm %></td>  
-                                <td><%= items[i].ordtime %></td>                     
+                                <td><%= items[i].ordTime %></td>                     
                             </tr> 
                         <% } %> 
                     </tbody>

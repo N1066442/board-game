@@ -27,8 +27,8 @@ var list = async function(){
 //------------------------------------------
 var add = async function(newData){
     var result;
-
-    await sql('INSERT INTO staff (userName, staffPhone, nickName, password) VALUES ($1, $2, $3, $4)', [newData.userName, newData.staffPhone, newData.nickName, newData.password])
+    console.log(newData)
+    await sql('INSERT INTO staff ("staffPhone" , "userName" , "password" , "nickName" ) VALUES ($1, $2, $3, $4)', [newData.staffPhone, newData.userName, newData.nickName, newData.password])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -43,7 +43,7 @@ var add = async function(newData){
 var remove = async function(userName){
     var result;
 
-    await sql('DELETE FROM staff WHERE userName = $1', [userName])
+    await sql('DELETE FROM staff WHERE "userName" = $1', [userName])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -58,7 +58,7 @@ var remove = async function(userName){
 var query = async function(userName){
     var result={};
     
-    await sql('SELECT * FROM staff WHERE userName = $1', [userName])
+    await sql('SELECT * FROM staff WHERE "userName" = $1', [userName])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];   
@@ -78,7 +78,7 @@ var query = async function(userName){
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE staff SET staffPhone=$1, nickName=$2, password=$3 WHERE userName = $4', [newData.userName, newData.staffPhone, newData.nickName, newData.password])
+    await sql('UPDATE staff SET "staffPhone"=$1, "nickName"=$2, "password"=$3 WHERE "userName" = $4', [newData.userName, newData.staffPhone, newData.nickName, newData.password])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {

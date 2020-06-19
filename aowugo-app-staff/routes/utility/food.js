@@ -27,7 +27,7 @@ var list = async function(){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO food (foodID, itemID, foodName, foodPoint, foodImg) VALUES ($1, $2, $3, $4, $5)', [newData.foodID, newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
+    await sql('INSERT INTO food ("foodID", "itemID", "foodName", "foodPoint", "foodImg") VALUES ($1, $2, $3, $4, $5)', [newData.foodID, newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -42,7 +42,7 @@ var add = async function(newData){
 var remove = async function(foodID){
     var result;
 
-    await sql('DELETE FROM food WHERE foodID = $1', [foodID])
+    await sql('DELETE FROM food WHERE "foodID" = $1', [foodID])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -57,7 +57,7 @@ var remove = async function(foodID){
 var query = async function(foodID){
     var result={};
     
-    await sql('SELECT * FROM food WHERE foodID = $1', [foodID])
+    await sql('SELECT * FROM food WHERE "foodID" = $1', [foodID])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];   
@@ -77,7 +77,7 @@ var query = async function(foodID){
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE food SET itemID=$1, foodName=$2, foodPoint=$3, foodImg=$4 WHERE foodID = $5', [newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
+    await sql('UPDATE food SET "itemID"=$1, "foodName"=$2, "foodPoint"=$3, "foodImg"=$4 WHERE "foodID" = $5', [newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {

@@ -12,7 +12,6 @@ router.post('/', function(req, res, next) {
     var phoneNo = req.body.phoneNo;                  
     var vacantTable = req.body.vacantTable;
     var businessHours = req.body.businessHours;
-    var staffPhone = req.body.staffPhone;
     var wifi = req.body.wifi;
     var socket = req.body.socket;
     var provideMeals = req.body.provideMeals;
@@ -27,7 +26,6 @@ router.post('/', function(req, res, next) {
         phoneNo:phoneNo,
         vacantTable:vacantTable,
         businessHours:businessHours,
-        staffPhone:staffPhone,
         wifi:wifi,
         socket:socket,
         provideMeals:provideMeals,
