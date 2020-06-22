@@ -27,7 +27,7 @@ var list = async function(){
 var one = async function(orderID){
     var result={};
     
-    await sql('SELECT * FROM orderdetail WHERE orderID = $1', [orderID])
+    await sql('SELECT * FROM orderdetail WHERE "orderID" = $1', [orderID])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];   
