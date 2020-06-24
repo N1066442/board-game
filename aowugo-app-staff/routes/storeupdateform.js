@@ -18,12 +18,11 @@ router.get('/', function(req, res, next) {
                 phoneNo: d.phoneNo,
                 vacantTable: d.vacantTable,
                 businessHours: d.businessHours,
-                staffPhone: d.staffPhone,
                 wifi: d.wifi,
                 socket: d.socket,
                 provideMeals: d.provideMeals,
                 outsideFood: d.outsideFood,
-                chargringStandards: d.chargringStandards,
+                chargingStandards: d.chargingStandards,
             }
 
             res.render('storeupdateform', {item:data});  //將資料傳給更新頁面

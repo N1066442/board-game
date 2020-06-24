@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
         socket: req.body.socket,                //取得提供插座
         provideMeals: req.body.provideMeals,    //取得提供餐點
         outsideFood: req.body.outsideFood,      //取得可帶外食
-        chargringStandards: req.body.chargringStandards     //取得收費標準
+        chargingStandards: req.body.chargingStandards     //取得收費標準
     } 
     
     store.update(newData).then(d => {
