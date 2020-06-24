@@ -77,7 +77,7 @@ var query = async function(storeID){
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE storeinformation SET "storeName"=$1, "storeAddress"=$2, "phoneNo"=$3 , "vacantTable"=$4, "businessHours"=$5, "wifi"=$6, "socket"=$7, "provideMeals"=$8, "outsideFood"=$9, "chargringStandards"=$10 WHERE "storeID" = $11', [newData.storeID, newData.storeName, newData.storeAddress, newData.phoneNo, newData.vacantTable, newData.businessHours, newData.wifi, newData.socket, newData.provideMeals, newData.outsideFood, newData.chargringStandards])
+    await sql('UPDATE storeinformation SET "storeName"=$2, "storeAddress"=$3, "phoneNo"=$4, "vacantTable"=$5, "businessHours"=$6, "wifi"=$7, "socket"=$8, "provideMeals"=$9, "outsideFood"=$10, "chargingStandards"=$11 WHERE "storeID" = $1', [newData.storeID, newData.storeName, newData.storeAddress, newData.phoneNo, newData.vacantTable, newData.businessHours, newData.wifi, newData.socket, newData.provideMeals, newData.outsideFood, newData.chargringStandards])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {
