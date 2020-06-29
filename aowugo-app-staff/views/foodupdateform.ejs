@@ -25,24 +25,28 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-            <h2>更新員工資料 </h2>
+            <h2>更新餐點 </h2>
 
-                <form action = "/staff/update" method = "post">
+                <form action = "/food/update" method = "post">
                     <div class="form">
-                        <span class="name">員工姓名</span>
-                        <span class="value"><input type="text" name="userName" value="<%= item.userName %>" readonly></span>
+                        <span class="name">餐點編號:</span>
+                        <span class="value"><input type="text" name="foodID" value="<%= item.foodID %>" readonly></span>
                         <br/>
 
-                        <span class="name">員工電話</span>
-                        <span class="value"><input type="tel" name="staffPhone"  value="<%= item.staffPhone %>"></span>
+                        <span class="name">類別編號:</span>
+                        <span class="value"><input type="number" name="itemID"  value="<%= item.itemID %>"></span>
                         <br/>
 
-                        <span class="name">暱稱</span>
-                        <span class="value"><input type="text" name="nickName" value="<%= item.nickName %>"></span>
+                        <span class="name">餐點名稱:</span>
+                        <span class="value"><input type="text" name="foodName" value="<%= item.foodName %>"></span>
                         <br/>
 
-                        <span class="name">密碼</span>
-                        <span class="value"><input type="text" name="password" value="<%= item.password %>"></span>
+                        <span class="name">餐點點數:</span>
+                        <span class="value"><input type="text" name="foodPoint" value="<%= item.foodPoint %>"></span>
+                        <br/>
+
+                        <span class="name">餐點圖片:</span>
+                        <span class="value"><input type="file" name="foodImg" value="<%= item.foodImg %>"></span>
                         <br/>
 
                         <span class="name"></span>

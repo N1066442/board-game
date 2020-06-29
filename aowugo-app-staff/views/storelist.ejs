@@ -25,7 +25,7 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-             <h2>店家資料</h2>
+             <h2>店家資訊</h2>
 
                 <table>
                     <thead>
@@ -36,12 +36,11 @@
                             <th width="15%">聯絡電話</th>
                             <th width="5%">空桌數</th>       
                             <th width="10%">營業時間</th>  
-                            <th width="15%">員工電話</th> 
                             <th width="5%">Wi-Fi</th> 
                             <th width="5%">提供插座</th> 
                             <th width="5%">提供餐點</th>   
                             <th width="5%">外食</th>       
-                            <th width="5%">收費標準</th>                                                   
+                            <th width="20%">收費標準</th>                                                   
                         </tr>
                     </thead>
                     <tbody>
@@ -52,13 +51,12 @@
                                 <td><%= items[i].storeAddress %></td>
                                 <td><%= items[i].phoneNo %></td>
                                 <td><%= items[i].vacantTable %></td>   
-                                <td><%= items[i].businessHours %></a></td>  
-                                <td><%= items[i].staffPhone %></a></td>     
+                                <td><%= items[i].businessHours %></a></td>     
                                 <td><%= items[i].wifi %></a></td>    
                                 <td><%= items[i].socket %></a></td>   
                                 <td><%= items[i].provideMeals %></a></td>       
                                 <td><%= items[i].outsideFood %></a></td>
-                                <td><%= items[i].chargringStandards %></a></td>
+                                <td><%= items[i].chargingStandards %></a></td>
                             </tr> 
                         <% } %> 
                     </tbody>

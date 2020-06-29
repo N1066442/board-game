@@ -25,34 +25,28 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-            <h2>產品新增 </h2>
+            <h2>新增餐點 </h2>
 
                 <form action = "/food/add" method = "post">
                     <div class="form">
-                        <span class="name">產品編號: </span>
-                        <span class="value"><input type="text" name="prono" maxlength="4"></span>
+                        <span class="name">餐點編號: </span>
+                        <span class="value"><input type="text" name="foodID" maxlength="4"></span>
                         <br/>
                                         
-                        <span class="name">產品名稱: </span>
-                        <span class="value"><input type="text" name="proname" ></span>
-                        <br/>
+                        <span class="name">類別編號: </span>
+                        <span class="value"><input type="text" name="itemID" ></span>
+                        <br/>                       
 
-                        <span class="name">產品型別: </span>
-                        <span class="value"> 
-                            <select name="typno" >
-                                <% for(var i=0; i<result.protype.length; i++) {%>
-                                    <option value="<%= result.protype[i].typno %>"><%= result.protype[i].typename %></option>
-                                <% } %> 
-                            </select>
-                        </span>
-                        <br/>
-
-                        <span class="name">單價: </span>
-                        <span class="value"><input type="number" name="price" ></span>
+                        <span class="name">餐點名稱: </span>
+                        <span class="value"><input type="text" name="foodName" ></span>
                         <br/>
                         
-                        <span class="name">選擇照片</span>
-                        <span class="value"><input type="file" name="picture" /></span>
+                        <span class="name">餐點點數: </span>
+                        <span class="value"><input type="number" name="foodPoint" /></span>
+                        <br/>
+
+                        <span class="name">餐點圖片: </span>
+                        <span class="value"><input type="file" name="foodImg" /></span>
                         <br/>
                         
                         <span class="name"></span>

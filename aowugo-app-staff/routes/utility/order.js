@@ -4,7 +4,7 @@
 const sql = require('./asyncDB');
 
 //------------------------------------------
-//執行資料庫動作的函式-傳回所有產品資料
+//執行資料庫動作的函式-傳回所有訂單資料
 //------------------------------------------
 var list = async function(){
     var result=[];
@@ -21,5 +21,23 @@ var list = async function(){
 		
     return result;
 }
-
-module.exports = {list}
+//------------------------------------------
+//執行資料庫動作的函式-取出單一商品
+//------------------------------------------
+var one = async function(orderID){
+    var result={};
+    
+    await sql('SELECT * FROM orderdetail WHERE "orderID" = $1', [orderID])
+        .then((data) => {
+            if(data.rows.length > 0){
+                result = data.rows[0];   
+            }else{
+                result = -1;
+            }    
+        }, (error) => {
+            result = null;
+        });
+		
+    return result;
+}
+module.exports = {list, one}
