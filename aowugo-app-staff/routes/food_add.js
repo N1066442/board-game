@@ -30,10 +30,10 @@ var upload = multer({
 
 //接收POST請求
 router.post('/',upload.single('picture'), function(req, res, next) {
-    var foodID = req.body.foodID;                  //取得餐點編號
-    var itemID = req.body.itemID;                  //取得類別編號
-    var foodName = req.body.foodName;              //取得餐點點數
-    var foodPoint = Number(req.body.foodPoint);    //取得密碼
+    var foodID = req.body.foodID;                 
+    var itemID = req.body.itemID;                  
+    var foodName = req.body.foodName;          
+    var foodPoint = Number(req.body.foodPoint);    
     var foodImg;
 
     // 如果有選擇圖片
