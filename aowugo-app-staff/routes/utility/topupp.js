@@ -1,4 +1,5 @@
 'use strict';
+
 //引用操作資料庫的物件
 const sql = require('./asyncDB');
 var add = async function(newData){
@@ -10,7 +11,7 @@ var add = async function(newData){
         }, (error) => {
             result = -1;
         });
-        
+		
     return result;
 }
 

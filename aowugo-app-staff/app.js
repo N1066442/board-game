@@ -90,9 +90,8 @@ app.use('/staff/update', staffupdate);
 app.use('/order/list', orderlist);
 app.use('/orderdetailone/list', orderdetailone);
 app.use('/checkout/list', checkoutlist);
-app.use('/topupp/add', topupadd);
-app.use('/topupp/add/form', topupaddform);
-
+app.use('/topup/add', topupadd);
+app.use('/topup/add/form', topupaddform);
 
 //-----------------------------------------
 
