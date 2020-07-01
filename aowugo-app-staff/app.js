@@ -104,7 +104,7 @@ app.use('/orderdetailone/list', checkAuth, orderdetailone);
 app.use('/checkout/list', checkAuth, checkoutlist);
 app.use('/topup/add', checkAuth, topupadd);
 app.use('/topup/add/form', checkAuth, topupaddform);
-app.use('/user/login/form', checkAuth, userloginform);
+app.use('/user/login/form', userloginform);
 app.use('/user/login', userlogin);
 app.use('/user/logout', userlogout);
 app.use('/user/show', usershow);
