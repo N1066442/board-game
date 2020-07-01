@@ -24,12 +24,23 @@
         
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
+            <h2>使用者登入 </h2>
 
-<<<<<<< HEAD:aowugo-app-staff/views/topupFail.ejs
-            <h2>儲值失敗!</h2>
-=======
-            <h2>儲值成功!</h2>
->>>>>>> userloginregiser:aowugo-app-staff/views/topupSuccess.ejs
+            <form action = "/user/login" method = "post">
+                <div class="form">
+                    <span class="name">帳號 </span>
+                    <span class="value"><input type="text" name="id"></span>
+                    <br/>
+                                                
+                    <span class="name">密碼 </span>
+                    <span class="value"><input type="password" name="password"></span>
+                    <br/>
+                                
+                    <span class="name"></span>
+                    <span class="value"><input type="submit" value="登入" ></span>    
+                </div>    
+            </form> 
+            
               
                
         </div>       

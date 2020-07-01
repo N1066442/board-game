@@ -3,7 +3,7 @@ var router = express.Router();
 
 //接收GET請求
 router.get('/', function(req, res, next) {
-    res.render('user_login_form');
+    res.render('userloginform');
 });
 
 module.exports = router; 
