@@ -6,9 +6,9 @@ const user = require('./utility/user');
 
 //接收POST請求
 router.get('/', function(req, res, next) {
-    req.session.empno = null;
+    req.session.staffPhone = null;
     req.session.name = null;           
-    res.render('user_show', {name:'已登出'});  //傳至登出    
+    res.render('usershow', {name:'已登出'});  //傳至登出    
 });
 
 module.exports = router;

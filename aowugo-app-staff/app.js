@@ -39,13 +39,25 @@ var orderdetailone = require('./routes/orderdetailone');
 var checkoutlist = require('./routes/checkoutlist');
 var topupadd = require('./routes/topupadd');
 var topupaddform = require('./routes/topupaddform');
-
-
+var userloginform = require('./routes/userloginform');
+var userlogin = require('./routes/userlogin');
+var userlogout = require('./routes/userlogout');
+var usershow = require('./routes/usershow');
+var checkAuth = require('./routes/checkAuth');
 
 //------------------------------------------------------------
 
 
 var app = express();
+
+//--------------------------------------------------------------------
+// 增加引用express-session
+//--------------------------------------------------------------------
+var session = require('express-session');
+app.use(session({secret: '請更改成一個隨機字串用來加密產生的signedCookie', cookie: { maxAge: 60000 }}));
+//--------------------------------------------------------------------
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -63,36 +75,39 @@ app.use('/users', usersRouter);
 // 設定模組使用方式
 //-----------------------------------------
 
-app.use('/food/list', food_list);
-app.use('/food/add', food_add);
-app.use('/food/add/form', food_add_form);
-app.use('/food/remove', food_remove);
-app.use('/food/remove/form', food_remove_form);
-app.use('/food/update/no', foodupdateno);
-app.use('/food/update/form', foodupdateform);
-app.use('/food/update', foodupdate);
-app.use('/staff/list', stafflist);
-app.use('/staff/add', staffadd);
-app.use('/staff/add/form', staffaddform);
-app.use('/store/list', storelist);
-app.use('/store/add', storeadd);
-app.use('/store/add/form', storeaddform);
-app.use('/store/remove', storeremove);
-app.use('/store/remove/form', storeremoveform);
-app.use('/store/update/no', storeupdateno);
-app.use('/store/update/form', storeupdateform);
-app.use('/store/update', storeupdate);
-app.use('/staff/remove/form', staffremoveform);
-app.use('/staff/remove', staffremove)
-app.use('/staff/update/no', staffupdateno);
-app.use('/staff/update/form', staffupdateform);
-app.use('/staff/update', staffupdate);
-app.use('/order/list', orderlist);
-app.use('/orderdetailone/list', orderdetailone);
-app.use('/checkout/list', checkoutlist);
-app.use('/topup/add', topupadd);
-app.use('/topup/add/form', topupaddform);
-
+app.use('/food/list', checkAuth, food_list);
+app.use('/food/add', checkAuth, food_add);
+app.use('/food/add/form', checkAuth, food_add_form);
+app.use('/food/remove', checkAuth, food_remove);
+app.use('/food/remove/form', checkAuth, food_remove_form);
+app.use('/food/update/no', checkAuth, foodupdateno);
+app.use('/food/update/form', checkAuth, foodupdateform);
+app.use('/food/update', checkAuth, foodupdate);
+app.use('/staff/list', checkAuth, stafflist);
+app.use('/staff/add', checkAuth, staffadd);
+app.use('/staff/add/form', checkAuth, staffaddform);
+app.use('/store/list', checkAuth, storelist);
+app.use('/store/add', checkAuth, storeadd);
+app.use('/store/add/form', checkAuth, storeaddform);
+app.use('/store/remove', checkAuth, storeremove);
+app.use('/store/remove/form', checkAuth, storeremoveform);
+app.use('/store/update/no', checkAuth, storeupdateno);
+app.use('/store/update/form', checkAuth, storeupdateform);
+app.use('/store/update', checkAuth, storeupdate);
+app.use('/staff/remove/form', checkAuth, staffremoveform);
+app.use('/staff/remove', checkAuth, staffremove)
+app.use('/staff/update/no', checkAuth, staffupdateno);
+app.use('/staff/update/form', checkAuth, staffupdateform);
+app.use('/staff/update', checkAuth, staffupdate);
+app.use('/order/list', checkAuth, orderlist);
+app.use('/orderdetailone/list', checkAuth, orderdetailone);
+app.use('/checkout/list', checkAuth, checkoutlist);
+app.use('/topup/add', checkAuth, topupadd);
+app.use('/topup/add/form', checkAuth, topupaddform);
+app.use('/user/login/form', checkAuth, userloginform);
+app.use('/user/login', userlogin);
+app.use('/user/logout', userlogout);
+app.use('/user/show', usershow);
 //-----------------------------------------
 
 //----------------------------------------
