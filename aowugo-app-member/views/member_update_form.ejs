@@ -29,16 +29,16 @@
 
                 <form action = "/member/update" method = "post">
                     <div class="form">
-                        <span class="name">會員手機號碼:</span>
-                        <span class="value"><input type="text" name="memberPhone" value="<%= item.memberPhone %>" readonly></span>
+                        <span class="name">會員帳號:</span>
+                        <span class="value"><input type="text" name="memberphone" value="<%= item.memberphone %>" readonly></span>
                         <br/>
 
                         <span class="name">會員名稱:</span>
-                        <span class="value"><input type="number" name="memberName"  value="<%= item.memberName %>"></span>
+                        <span class="value"><input type="text" name="membername"  value="<%= item.membername %>"></span>
                         <br/>
 
                         <span class="name">lineID:</span>
-                        <span class="value"><input type="text" name="lineID" value="<%= item.lineID %>"></span>
+                        <span class="value"><input type="text" name="lineid" value="<%= item.lineid %>"></span>
                         <br/>
 
                         <span class="name">性別:</span>
@@ -46,19 +46,16 @@
                         <br/>
 
                         <span class="name">mail:</span>
-                        <span class="value"><input type="file" name="mail" value="<%= item.mail %>"></span>
+                        <span class="value"><input type="email" name="mail" value="<%= item.mail %>"></span>
                         <br/>
 
                         <span class="name">生日:</span>
-                        <span class="value"><input type="file" name="birthday" value="<%= item.birthday %>"></span>
+                        <span class="value"><input type="date" name="birthday" value="<%= item.birthday %>"></span>
                         <br/>
 
-                        <span class="name">點數:</span>
-                        <span class="value"><input type="file" name="point" value="<%= item.point %>"></span>
-                        <br/>
 
                         <span class="name">建立日期:</span>
-                        <span class="value"><input type="file" name="creationDate" value="<%= item.creationDate %>"></span>
+                        <span class="value"><input type="datetime-local" name="creationdate" value="<%= item.creationdate %>"></span>
                         <br/>
 
                         <span class="name"></span>

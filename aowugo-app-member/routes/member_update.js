@@ -6,17 +6,16 @@ const member = require('./utility/member');
 
 //接收POST請求
 router.post('/', function(req, res, next) {
-    var memberPhone = req.body.memberPhone;   //取得會員手機號碼
+    var memberphone = req.body.memberphone;   //取得會員手機號碼
 
     var newData={
-        memberPhone: memberPhone,               //會員手機號碼
-        memberName: req.body.memberName,        //會員名稱
-        lineID: req.body.lineID,                //lineID
+        memberphone: memberphone,               //會員手機號碼
+        membername: req.body.membername,        //會員名稱
+        lineid: req.body.lineid,                //lineID
         gender: req.body.gender,                //性別
         mail: req.body.mail,                    //mail
         birthday: req.body.birthday,            //生日
-        point: req.body.point,                  //點數
-        creationDate: req.body.creationDate,    //建立日期
+        creationdate: req.body.creationdate    //建立日期
        
     } 
     

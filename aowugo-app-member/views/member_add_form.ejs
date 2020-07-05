@@ -28,24 +28,36 @@
 
             <form action = "/member/add" method = "post">
                 <div class="form">
-                    <span class="name">會員手機號碼: </span>
-                    <span class="value"><input type="text" name="prono" maxlength="4"></span>
+                   <span class="name">會員帳號: </span>
+                    <span class="value"><input type="text" name="memberphone"></span>
                     <br/>
-                                    
+                          
                     <span class="name">會員名稱: </span>
-                    <span class="value"><input type="text" name="proname" ></span>
+                    <span class="value"><input type="text" name="membername" ></span>
                     <br/>
-                                                        
-                    <span class="name">點數: </span>
-                    <span class="value"><input type="number" name="price" ></span>
+                    
+                    <span class="name">lineID:</span>
+                    <span class="value"><input type="text" name="lineid" ></span>
                     <br/>
-                                            
+                     
+                    <span class="name">性別:</span>
+                    <span class="value"><input type="text" name="gender" ></span>
+                    <br/>
+                  
+                    <span class="name">mail:</span>
+                    <span class="value"><input type="email" name="mail"></span>
+                    <br/>
+                    
+                    <span class="name">生日:</span>
+                    <span class="value"><input type="date" name="birthday" ></span>
+                    <br/>
+                                           
                     <span class="name">建立日期: </span>
-                    <span class="value"><input type="date" name="inventorydate" ></span>
+                    <span class="value"><input type="datetime-local" name="creationdate" ></span>
                     <br/>	    
-                                    
+                             
                     <span class="name"></span>
-                    <span class="value"><input type="submit" value="新增" ></span>    
+                    <span class="value"><input type="submit" value="新增" ></span> 
                 </div>    
             </form>
 

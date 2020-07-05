@@ -6,4 +6,4 @@ router.get('/', function(req, res, next) {
     res.render('member_add_form'); 
 });
 
-module.exports = router;
+module.exports = router; 

@@ -4,16 +4,16 @@
 const sql = require('./asyncDB');
 
 //------------------------------------------
-//執行資料庫動作的函式-傳回所有產品資料
+//執行資料庫動作的函式-傳回所有會員資料
 //------------------------------------------
 var list = async function(){
-    var result=[];
+    var result="";
 
-    console.log("查看會員資訊");
+    //console.log("查看會員資訊");
     await sql('SELECT * FROM member')
         .then((data) => {            
             result = data.rows;
-            console.log(result)  ;
+            //console.log(result)  ;
         }, (error) => {
             result = null;
             //console.log("除去錯誤")  ;
@@ -22,12 +22,19 @@ var list = async function(){
     return result;
 }
 //------------------------------------------
-//執行資料庫動作的函式-新增產品資料
+//執行資料庫動作的函式-新增會員資料
 //------------------------------------------
 var add = async function(newData){
     var result;
-
-    await sql('INSERT INTO member (prono, proname, price, inventorydate) VALUES ($1, $2, $3, $4)', [newData.memberPhone, newData.memberName, newData.lineID, newData.gender, newData.mail, newData.birthday, newData.point, newData.creationDate])
+    console.log(newData)
+    console.log(newData.memberphone)
+    console.log(newData.membername)
+    console.log(newData.lineid)
+    console.log(newData.gender)
+    console.log(newData.mail)
+    console.log(newData.birthday)
+    console.log(newData.creationdate)
+    await sql('INSERT INTO member (memberphone, membername, lineid, gender, mail, birthday, creationdate) VALUES ($1, $2, $3, $4, $5, $6, $7)', [newData.memberphone, newData.membername, newData.lineid, newData.gender, newData.mail, newData.birthday, newData.creationdate])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -36,51 +43,14 @@ var add = async function(newData){
 		
     return result;
 }
-//------------------------------------------
-// 取出型態資料
-//------------------------------------------
-var getDropdownData = async function(){
-    //儲存下拉式選單資料
-    var protype;
-    
-    //取回protype資料
-    await sql('SELECT * FROM member')
-        .then((data) => {
-            protype = data.rows;  
-        }, (error) => {
-            result = [];
-        });
-    
-    //設定回傳資料    
-    var result = {};
-    result.protype = protype;
 
-    //回傳
-    return result;
-}
-
-//------------------------------------------
-// 新增商品
-//------------------------------------------
-var add = async function(newData){
+//----------------------------------
+// 刪除會員資料
+//----------------------------------
+var remove = async function(memberphone){
     var result;
 
-    await sql('INSERT INTO member (prono, proname, typno, price) VALUES ($1, $2, $3, $4)', [newData.memberPhone, newData.memberName, newData.lineID, newData.gender, newData.mail, newData.birthday, newData.point, newData.creationDate])
-        .then((data) => {
-            result = 0;  
-        }, (error) => {
-            result = -1;
-        });
-		
-    return result;
-}
-//----------------------------------
-// 刪除商品
-//----------------------------------
-var remove = async function(prono){
-    var result;
-
-    await sql('DELETE FROM member WHERE prono = $1', [prono])
+    await sql('DELETE FROM member WHERE memberphone = $1', [memberphone])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -90,12 +60,12 @@ var remove = async function(prono){
     return result;
 }
 //------------------------------------------
-//執行資料庫動作的函式-取出單一商品
+//執行資料庫動作的函式-取得一個會員資料
 //------------------------------------------
-var query = async function(prono){
+var query = async function(memberphone){
     var result={};
     
-    await sql('SELECT * FROM member WHERE prono = $1', [prono])
+    await sql('SELECT * FROM member WHERE memberphone = $1', [memberphone])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];   
@@ -110,12 +80,12 @@ var query = async function(prono){
 }
 
 //----------------------------------
-// 更新商品
+// 更新會員資料
 //----------------------------------
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE member SET proname=$1, price=$2, inventorydate=$3 WHERE prono = $4', [newData.memberPhone, newData.memberName, newData.lineID, newData.gender, newData.mail, newData.birthday, newData.point, newData.creationDate])
+    await sql('UPDATE member SET membername=$2, lineid=$3, gender=$4, mail=$5, birthday=$6, creationdate=$7  WHERE memberphone = $1', [newData.memberphone, newData.membername, newData.lineid, newData.gender, newData.mail, newData.birthday, newData.creationdate])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {
@@ -124,4 +94,5 @@ var update = async function(newData){
 		
     return results;
 }
-module.exports = {list, add, getDropdownData, remove, query, update}
+
+module.exports = {list, add, remove, query, update}

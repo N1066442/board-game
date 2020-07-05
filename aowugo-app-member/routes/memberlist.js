@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
             res.render('error');  //導向錯誤頁面
         }else if(data.length > 0){
             console.log(data);
-            res.render('member', {items:data});  //將資料傳給顯示頁面
+            res.render('memberlist', {items:data});  //將資料傳給顯示頁面
         }else{
             res.render('notFound');  //導向找不到頁面
         }  

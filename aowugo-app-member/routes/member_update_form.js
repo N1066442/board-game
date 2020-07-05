@@ -7,19 +7,18 @@ const member = require('./utility/member');
 
 //接收GET請求
 router.get('/', function(req, res, next) {
-    var no = req.query.memberID;
+    var no = req.query.memberphone;
 
     member.query(no).then(d => {
         if (d!=null && d!=-1){
             var data = {
-                memberPhone: d.memberPhone,
-                memberName: d.memberName,
-                lineID: d.lineID,
+                memberphone: d.memberphone,
+                membername: d.membername,
+                lineid: d.lineid,
                 gender: d.gender,
                 mail: d.mail,
-                birthday: d.birthday,
-                point: d.point,
-                creationDate: d.creationDate,
+                birthday: moment(d.birthday).format("YYYY-MM-DD"),
+                creationdate: moment(d.creationdate).format("YYYY-MM-DD"),
             }
 
             res.render('member_update_form', {item:data});  //將資料傳給更新頁面

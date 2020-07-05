@@ -10,16 +10,16 @@ var usersRouter = require('./routes/users');
 // 增加引用模組
 //------------------------------------------------------------
 
-var storelist = require('./routes/storelist') ;
+var storelist = require('./routes/storelist');
 var memberlist = require('./routes/memberlist') ;
 var member_add_form = require('./routes/member_add_form');
 var member_add = require('./routes/member_add');
-var member_add_form2 = require('./routes/member_add_form2');
 var member_remove_form = require('./routes/member_remove_form');
 var member_remove = require('./routes/member_remove');
 var member_update_no = require('./routes/member_update_no');
 var member_update_form = require('./routes/member_update_form');
 var member_update = require('./routes/member_update');
+var calculatingtimelist = require('./routes/calculatingtimelist');
 //------------------------------------------------------------
 
 
@@ -46,12 +46,12 @@ app.use('/store/list', storelist);
 app.use('/member/list', memberlist);
 app.use('/member/add/form', member_add_form);
 app.use('/member/add', member_add);
-app.use('/member/add/form2', member_add_form2);
 app.use('/member/remove/form', member_remove_form);
 app.use('/member/remove', member_remove);
 app.use('/member/update/no', member_update_no);
 app.use('/member/update/form', member_update_form);
 app.use('/member/update', member_update);
+app.use('/calculatingtime/list', calculatingtimelist);
 //-----------------------------------------
 
 //----------------------------------------
@@ -79,8 +79,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-
-
-
