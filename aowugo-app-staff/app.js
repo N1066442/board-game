@@ -42,6 +42,8 @@ var topupaddform = require('./routes/topupaddform');
 var userloginform = require('./routes/userloginform');
 var userlogin = require('./routes/userlogin');
 var userlogout = require('./routes/userlogout');
+var registeradd = require('./routes/registeradd');
+var registeraddform = require('./routes/registeraddform');
 var usershow = require('./routes/usershow');
 var checkAuth = require('./routes/checkAuth');
 
@@ -108,6 +110,8 @@ app.use('/user/login/form', userloginform);
 app.use('/user/login', userlogin);
 app.use('/user/logout', userlogout);
 app.use('/user/show', usershow);
+app.use('/register/add', registeradd);
+app.use('/register/add/form', registeraddform);
 //-----------------------------------------
 
 //----------------------------------------
