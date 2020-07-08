@@ -27,7 +27,7 @@ var list = async function(){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO food ("foodID", "itemID", "foodName", "foodPoint", "foodImg") VALUES ($1, $2, $3, $4, $5)', [newData.foodID, newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
+    await sql('INSERT INTO food ( "itemID", "foodName", "foodPoint", "foodImg") VALUES ($1, $2, $3, $4)', [newData.itemID, newData.foodName, newData.foodPoint, newData.foodImg])
         .then((data) => {
             result = 0;  
         }, (error) => {
