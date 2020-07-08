@@ -15,9 +15,13 @@ router.post('/', function(req, res, next) {
             req.session.name = null;           
             res.render('loginFail');  //傳至登入失敗
         }else{
+            
             req.session.staffPhone = d.staffPhone;
             req.session.name = d.userName;
             res.render('usershow', {name:d.userName});   //導向使用者
+            console.log('已登入');
+            console.log(d.staffPhone)
+            console.log(d.userName)
         }  
     })
 });

@@ -7,7 +7,7 @@ router.all('/', function(req, res, next) {
     var id = null;
 
     try{
-        id = req.session.passport.user.id;
+        id = req.session.staffPhone;
     }catch(err){
         id = null;        
     }
