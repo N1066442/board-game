@@ -5,8 +5,7 @@ var router = express.Router();
 const store = require('./utility/store');
 
 //接收POST請求
-router.post('/', function(req, res, next) {
-    var storeID = req.body.storeID;                  
+router.post('/', function(req, res, next) {           
     var storeName = req.body.storeName;              
     var storeAddress = req.body.storeAddress;        
     var phoneNo = req.body.phoneNo;                  
@@ -20,7 +19,6 @@ router.post('/', function(req, res, next) {
 
     // 建立一個新資料物件
     var newData={
-        storeID:storeID,
         storeNamemID:storeName,
         storeAddress:storeAddress,
         phoneNo:phoneNo,
