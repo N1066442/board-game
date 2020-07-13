@@ -25,18 +25,19 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-            <h2>餐點資料更新</h2>
+            <h2>新增類別 </h2>
 
-            <form action = "/food/update/form" method = "get">
-                <div class="form">
-                    <span class="name">餐點編號: </span>
-                    <span class="value"><input type="text" name="foodID" ></span>
-                    <br/>    
-            
-                    <span class="name"></span>
-                    <span class="value"><input type="submit" value="查詢" ></span>    
-                </div>    
-            </form> 
+                <form action = "/item/add" method = "post">
+                    <div class="form">                  
+
+                        <span class="name">類別名稱: </span>
+                        <span class="value"><input type="text" name="itemName" ></span>
+                        <br/>
+                        
+                        <span class="name"></span>
+                        <span class="value"><input type="submit" value="新增" ></span>    
+                    </div>
+                </form>
               
                
         </div>       
