@@ -39,6 +39,14 @@ var orderdetailone = require('./routes/orderdetailone');
 var checkoutlist = require('./routes/checkoutlist');
 var topupadd = require('./routes/topupadd');
 var topupaddform = require('./routes/topupaddform');
+var itemlist = require('./routes/itemlist');
+var itemadd = require('./routes/itemadd');
+var itemaddform = require('./routes/itemaddform');
+var itemremoveform = require('./routes/itemremoveform');
+var itemremove = require('./routes/itemremove');
+var itemupdateno = require('./routes/itemupdateno');
+var itemupdateform = require('./routes/itemupdateform');
+var itemupdate = require('./routes/itemupdate');
 var userloginform = require('./routes/userloginform');
 var userlogin = require('./routes/userlogin');
 var userlogout = require('./routes/userlogout');
@@ -46,6 +54,7 @@ var registeradd = require('./routes/registeradd');
 var registeraddform = require('./routes/registeraddform');
 var usershow = require('./routes/usershow');
 var checkAuth = require('./routes/checkAuth');
+
 
 //------------------------------------------------------------
 
@@ -56,7 +65,7 @@ var app = express();
 // 增加引用express-session
 //--------------------------------------------------------------------
 var session = require('express-session');
-app.use(session({secret: '請更改成一個隨機字串用來加密產生的signedCookie', cookie: { maxAge: 60000 }}));
+app.use(session({secret: 'recommand 128 bytes random string', cookie: { maxAge: 60000 }}));
 //--------------------------------------------------------------------
 
 
@@ -106,6 +115,14 @@ app.use('/orderdetailone/list', checkAuth, orderdetailone);
 app.use('/checkout/list', checkAuth, checkoutlist);
 app.use('/topup/add', checkAuth, topupadd);
 app.use('/topup/add/form', checkAuth, topupaddform);
+app.use('/item/list', checkAuth, itemlist);
+app.use('/item/add', checkAuth, itemadd);
+app.use('/item/add/form', checkAuth, itemaddform);
+app.use('/item/remove', checkAuth, itemremove);
+app.use('/item/remove/form', checkAuth, itemremoveform);
+app.use('/item/update/no', checkAuth, itemupdateno);
+app.use('/item/update/form', checkAuth, itemupdateform);
+app.use('/item/update', checkAuth, itemupdate);
 app.use('/user/login/form', userloginform);
 app.use('/user/login', userlogin);
 app.use('/user/logout', userlogout);

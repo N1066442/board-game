@@ -25,18 +25,24 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-            <h2>餐點資料更新</h2>
+             <h2>餐點類別</h2>
 
-            <form action = "/food/update/form" method = "get">
-                <div class="form">
-                    <span class="name">餐點編號: </span>
-                    <span class="value"><input type="text" name="foodID" ></span>
-                    <br/>    
-            
-                    <span class="name"></span>
-                    <span class="value"><input type="submit" value="查詢" ></span>    
-                </div>    
-            </form> 
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="50%">類別編號</th>
+                            <th width="50%">類別名稱</th>                                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i<items.length; i++) {%>
+                            <tr>
+                                <td><%= items[i].itemID %></a></td>
+                                <td><%= items[i].itemName %></td>                           
+                            </tr> 
+                        <% } %> 
+                    </tbody>
+                </table>   
               
                
         </div>       
