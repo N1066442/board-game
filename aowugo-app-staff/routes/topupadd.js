@@ -5,8 +5,7 @@ var router = express.Router();
 const topupp = require('./utility/topupp');
 
 //接收POST請求
-router.post('/', function(req, res, next) {
-    var serNo = Number(req.body.serNo);                  
+router.post('/', function(req, res, next) {               
     var memberPhone = req.body.memberPhone;              
     var staffPhone = req.body.staffPhone;                  
     var topup = Number(req.body.topup);                  
@@ -16,7 +15,6 @@ router.post('/', function(req, res, next) {
     // 建立一個新資料物件
 
     var newData={
-        serNo:serNo,
         memberPhone:memberPhone,
         staffPhone:staffPhone,
         topup:topup,

@@ -9,7 +9,7 @@ router.post('/', function(req, res, next) {
     var storeName = req.body.storeName;              
     var storeAddress = req.body.storeAddress;        
     var phoneNo = req.body.phoneNo;                  
-    var vacantTable = req.body.vacantTable;
+    var vacantTable = Number(req.body.vacantTable);
     var businessHours = req.body.businessHours;
     var wifi = req.body.wifi;
     var socket = req.body.socket;
