@@ -20,6 +20,14 @@ var member_update_no = require('./routes/member_update_no');
 var member_update_form = require('./routes/member_update_form');
 var member_update = require('./routes/member_update');
 var calculatingtimelist = require('./routes/calculatingtimelist');
+var orderlist = require('./routes/orderlist');
+var order_add_form = require('./routes/order_add_form');
+var order_add = require('./routes/order_add');
+var order_remove_form = require('./routes/order_remove_form');
+var order_remove = require('./routes/order_remove')
+var order_update_no = require('./routes/order_update_no');
+var order_update_form = require('./routes/order_update_form');
+var order_update = require('./routes/order_update');
 //------------------------------------------------------------
 
 
@@ -52,6 +60,14 @@ app.use('/member/update/no', member_update_no);
 app.use('/member/update/form', member_update_form);
 app.use('/member/update', member_update);
 app.use('/calculatingtime/list', calculatingtimelist);
+app.use('/order/list', orderlist);
+app.use('/order/add/form', order_add_form);
+app.use('/order/add', order_add);
+app.use('/order/remove/form', order_remove_form);
+app.use('/order/remove', order_remove);
+app.use('/order/update/no', order_update_no);
+app.use('/order/update/form', order_update_form);
+app.use('/order/update', order_update);
 //-----------------------------------------
 
 //----------------------------------------
