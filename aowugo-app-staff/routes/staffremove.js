@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 //增加引用函式
-const product = require('./utility/product');
+const staff = require('./utility/staff');
 
 //接收POST請求
 router.post('/', function(req, res, next) {
-    var prono = req.body.prono;   //取得產品編號
+    var userName = req.body.userName;   //取得店家編號
    
-    product.remove(prono).then(d => {
+    staff.remove(userName).then(d => {
         if(d>=0){
             res.render('removeSuccess', {results:d});  //傳至成功頁面     
         }else{

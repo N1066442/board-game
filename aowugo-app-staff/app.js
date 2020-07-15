@@ -10,18 +10,35 @@ var usersRouter = require('./routes/users');
 // 增加引用模組
 //------------------------------------------------------------
 
-var product_list = require('./routes/product_list');
-var product_one = require('./routes/product_one');
-var product_page = require('./routes/product_page');
-var product_query_form = require('./routes/product_query_form');
-var product_query = require('./routes/product_query');
-var product_add_form = require('./routes/product_add_form');
-var product_add = require('./routes/product_add');
-var product_remove_form = require('./routes/product_remove_form');
-var product_remove = require('./routes/product_remove');
-var product_update_no = require('./routes/product_update_no');
-var product_update_form = require('./routes/product_update_form');
-var product_update = require('./routes/product_update');
+var food_list = require('./routes/food_list');
+var food_add = require('./routes/food_add');
+var food_add_form = require('./routes/food_add_form');
+var food_remove = require('./routes/food_remove');
+var food_remove_form = require('./routes/food_remove_form');
+var stafflist = require('./routes/stafflist');
+var staffadd = require('./routes/staffadd');
+var staffaddform = require('./routes/staffaddform');
+var staffremoveform = require('./routes/staffremoveform');
+var staffremove = require('./routes/staffremove');
+var staffupdateno = require('./routes/staffupdateno');
+var staffupdateform = require('./routes/staffupdateform');
+var staffupdate = require('./routes/staffupdate');
+var storelist = require('./routes/storelist');
+var storeadd = require('./routes/storeadd');
+var storeaddform = require('./routes/storeaddform');
+var storeremove = require('./routes/storeremove');
+var storeremoveform = require('./routes/storeremoveform');
+var storeupdateno = require('./routes/storeupdateno');
+var storeupdateform = require('./routes/storeupdateform');
+var storeupdate = require('./routes/storeupdate');
+var foodupdateno = require('./routes/foodupdateno');
+var foodupdateform = require('./routes/foodupdateform');
+var foodupdate = require('./routes/foodupdate');
+var orderlist = require('./routes/orderlist');
+var orderdetailone = require('./routes/orderdetailone');
+var checkoutlist = require('./routes/checkoutlist');
+
+
 
 //------------------------------------------------------------
 
@@ -39,23 +56,39 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/users', usersRouter);
 //-----------------------------------------
 // 設定模組使用方式
 //-----------------------------------------
 
-app.use('/product/list', product_list);
-app.use('/product/one', product_one);
-app.use('/product/page', product_page);
-app.use('/product/query/form', product_query_form);
-app.use('/product/query', product_query);
-app.use('/product/add/form', product_add_form);
-app.use('/product/add', product_add);
-app.use('/product/remove/form', product_remove_form);
-app.use('/product/remove', product_remove);
-app.use('/product/update/no', product_update_no);
-app.use('/product/update/form', product_update_form);
-app.use('/product/update', product_update);
+app.use('/food/list', food_list);
+app.use('/food/add', food_add);
+app.use('/food/add/form', food_add_form);
+app.use('/food/remove', food_remove);
+app.use('/food/remove/form', food_remove_form);
+app.use('/food/update/no', foodupdateno);
+app.use('/food/update/form', foodupdateform);
+app.use('/food/update', foodupdate);
+app.use('/staff/list', stafflist);
+app.use('/staff/add', staffadd);
+app.use('/staff/add/form', staffaddform);
+app.use('/store/list', storelist);
+app.use('/store/add', storeadd);
+app.use('/store/add/form', storeaddform);
+app.use('/store/remove', storeremove);
+app.use('/store/remove/form', storeremoveform);
+app.use('/store/update/no', storeupdateno);
+app.use('/store/update/form', storeupdateform);
+app.use('/store/update', storeupdate);
+app.use('/staff/remove/form', staffremoveform);
+app.use('/staff/remove', staffremove)
+app.use('/staff/update/no', staffupdateno);
+app.use('/staff/update/form', staffupdateform);
+app.use('/staff/update', staffupdate);
+app.use('/order/list', orderlist);
+app.use('/orderdetailone/list', orderdetailone);
+app.use('/checkout/list', checkoutlist);
+
 
 //-----------------------------------------
 
