@@ -25,31 +25,38 @@
         <!--~~~~~~~~~~~~~~~~~--> 
         <div class="content">
 
-             <h2>訂單</h2>
+             <h2>訂單明細</h2>
 
                 <table>
                     <thead>
                         <tr>
-                            <th width="5%">訂單編號</th>
-                            <th width="15%">會員電話</th>
-                            <th width="15%">員工電話</th>
-                            <th width="５%">桌號</th>
-                            <th width="10%">總點數</th>  
-                            <th width="５%">確認</th> 
-                            <th width="45%">成立時間</th>  
+                            <th width="5%">訂單明細編號</th>
+                            <th width="10%">餐點編號</th>
+                            <th width="5%">數量</th>
+                            <th width="20%">備註</th>
+                            <th width="10%">會員電話號碼</th>  
+                            <th width="10%">員工電話號碼</th> 
+                            <th width="5%">桌號</th>  
+                            <th width="10%">合計</th>  
+                            <th width="5%">是否結帳</th>  
+                            <th width="20%">建立時間</th>  
                                                  
                         </tr>
                     </thead>
                     <tbody>
                         <% for(var i=0; i<items.length; i++) {%>
                             <tr>
-                                <td><a href="/orderdetail/one/<%= items[i].orderID %>"><%= items[i].orderID %></a></td>
-                                <td><%= items[i].memberPhone %></td>
-                                <td><%= items[i].staffPhone %></td>
-                                <td><%= items[i].tableNo %></td>
-                                <td><%= items[i].total %></td>   
-                                <td><%= items[i].confirm %></td>  
-                                <td><%= items[i].ordTime %></td>                     
+                                <td><%= items[i].orderdetailid %></a></td>
+                                <td><%= items[i].foodid %></td>
+                                <td><%= items[i].foodno %></td>
+                                <td><%= items[i].customized %></td>
+                                <td><%= items[i].memberPhone %></td>   
+                                <td><%= items[i].staffPhone %></td>  
+                                <td><%= items[i].tableNo %></td> 
+                                <td><%= items[i].total %></td> 
+                                <td><%= items[i].confirm %></td> 
+                                <td><%= items[i].ordtime %></td>   
+
                             </tr> 
                         <% } %> 
                     </tbody>

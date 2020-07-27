@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     food.query(no).then(d => {
         if (d!=null && d!=-1){
             var data = {
-                foodID: d.foodID,
+                foodid: d.foodid,
                 itemID: d.itemID,
                 foodName: d.foodName,
                 foodPoint: d.foodPoint,
