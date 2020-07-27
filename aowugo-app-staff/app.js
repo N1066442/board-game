@@ -35,7 +35,6 @@ var foodupdateno = require('./routes/foodupdateno');
 var foodupdateform = require('./routes/foodupdateform');
 var foodupdate = require('./routes/foodupdate');
 var orderlist = require('./routes/orderlist');
-var orderdetailone = require('./routes/orderdetailone');
 var checkoutlist = require('./routes/checkoutlist');
 var topupadd = require('./routes/topupadd');
 var topupaddform = require('./routes/topupaddform');
@@ -53,6 +52,8 @@ var userlogout = require('./routes/userlogout');
 var registeradd = require('./routes/registeradd');
 var registeraddform = require('./routes/registeraddform');
 var usershow = require('./routes/usershow');
+var caltimeadd = require('./routes/caltimeadd');
+var caltimeaddform = require('./routes/caltimeaddform');
 var checkAuth = require('./routes/checkAuth');
 
 
@@ -66,7 +67,8 @@ var app = express();
 // 增加引用express-session
 //--------------------------------------------------------------------
 var session = require('express-session');
-app.use(session({secret: 'recommand 128 bytes random string', cookie: { maxAge: 60000 }}));
+const caltime = require('./routes/utility/caltime');
+app.use(session({secret: 'recommand 128 bytes random string', cookie: { maxAge: 1*60*60*1000 }}));
 //--------------------------------------------------------------------
 
 
@@ -87,7 +89,7 @@ app.use('/users', usersRouter);
 // 設定模組使用方式
 //-----------------------------------------
 
-app.use('/food/list', food_list);
+app.use('/food/list',checkAuth, food_list);
 app.use('/food/add', food_add);
 app.use('/food/add/form', food_add_form);
 app.use('/food/remove', food_remove);
@@ -112,7 +114,6 @@ app.use('/staff/update/no', staffupdateno);
 app.use('/staff/update/form', staffupdateform);
 app.use('/staff/update', staffupdate);
 app.use('/order/list', orderlist);
-app.use('/orderdetailone/list', orderdetailone);
 app.use('/checkout/list', checkoutlist);
 app.use('/topup/add', topupadd);
 app.use('/topup/add/form', topupaddform);
@@ -130,6 +131,8 @@ app.use('/user/logout', userlogout);
 app.use('/user/show', usershow);
 app.use('/register/add', registeradd);
 app.use('/register/add/form', registeraddform);
+app.use('/caltime/add', caltimeadd);
+app.use('/caltime/add/form', caltimeaddform);
 //-----------------------------------------
 
 //----------------------------------------

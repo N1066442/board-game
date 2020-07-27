@@ -6,9 +6,9 @@ const food = require('./utility/food');
 
 //接收POST請求
 router.post('/', function(req, res, next) {
-    var foodID = req.body.foodID;   //取得餐點編號
+    var foodid = req.body.foodid;   //取得餐點編號
    
-    food.remove(foodID).then(d => {
+    food.remove(foodid).then(d => {
         if(d>=0){
             res.render('removeSuccess', {results:d});  //傳至成功頁面     
         }else{
