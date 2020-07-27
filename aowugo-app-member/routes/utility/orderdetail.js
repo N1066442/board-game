@@ -64,7 +64,7 @@ var query = async function(orderdetailid){
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE orderdetail SET foodid=$1, foodno=$2, customized=$3, orderid=$4, ordtime=$5 WHERE orderdetailid = $6', [newData.foodid, newData.foodno, newData.customized,  newData.orderid, newData.ordtime, newData.orderdetailid,])
+    await sql('UPDATE orderdetail SET foodid=$1, foodno=$2, customized=$3, ordtime=$4 WHERE orderdetailid = $5', [newData.foodid, newData.foodno, newData.customized,  newData.ordtime, newData.orderdetailid])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {

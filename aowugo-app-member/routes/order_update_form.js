@@ -3,20 +3,19 @@ var router = express.Router();
 
 //增加引用函式
 var moment = require('moment');
-const order = require('./utility/order');
+const orderdetail = require('./utility/orderdetail');
 
 //接收GET請求
 router.get('/', function(req, res, next) {
     var no = req.query.orderdetailid;
 
-    order.query(no).then(d => {
+    orderdetail.query(no).then(d => {
         if (d!=null && d!=-1){
             var data = {
+                orderdetailid: d.orderdetailid,
                 foodid: d.foodid,
                 foodno: d.foodno,
                 customized: d.customized,
-                orderdetailid: d.orderdetailid,
-                orderid: d.orderid,
                 ordtime: moment(d.ordtime).format("YYYY-MM-DD"),
             }
 

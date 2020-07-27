@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //增加引用函式
-const order = require('./utility/order');
+const order = require('./utility/orderdetail');
 
 //接收POST請求
 router.post('/', function(req, res, next) {

@@ -10,8 +10,6 @@ router.post('/', function(req, res, next) {
     var foodid=req.body.foodid;                     //會員手機號碼
     var foodno= req.body.foodno;                    //會員名稱
     var customized= req.body.customized;            //lineID
-    var orderdetailid= req.body.orderdetailid;      //性別
-    var orderid= req.body.orderid;                  //mail
     var ordtime= req.body.ordtime;                  //生日
     
     // 建立一個新資料物件
@@ -19,8 +17,6 @@ router.post('/', function(req, res, next) {
         foodid: foodid,                     //會員手機號碼
         foodno: foodno,                     //會員名稱
         customized: customized,             //lineID
-        orderdetailid:orderdetailid,        //性別
-        orderid:orderid,                    //mail
         ordtime:ordtime,                    //生日
     } 
     console.log(newData)
