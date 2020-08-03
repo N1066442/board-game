@@ -7,10 +7,10 @@ const topupp = require('./utility/topupp');
 //接收POST請求
 router.post('/', function(req, res, next) {               
     var memberPhone = req.body.memberPhone;              
-    var staffPhone = req.body.staffPhone;                  
+    var staffPhone = req.session.staffPhone;                  
     var topup = Number(req.body.topup);                  
     var topupPoints = Number(req.body.topupPoints);
-    var topupTime = req.body.topupTime;
+    
     
     // 建立一個新資料物件
 
@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
         staffPhone:staffPhone,
         topup:topup,
         topupPoints:topupPoints,
-        topupTime:topupTime
+       
     } 
     console.log(newData)
     topupp.add(newData).then(d => {

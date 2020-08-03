@@ -3,7 +3,8 @@ var router = express.Router();
 
 //增加引用函式
 const caltime = require('./utility/caltime');
-const { now } = require('moment');
+//const { now } = require('moment');
+
 
 //接收POST請求
 router.post('/', function(req, res, next) {
@@ -11,11 +12,9 @@ router.post('/', function(req, res, next) {
     
     // 建立一個新資料物件
     //var timestamp = new Date().getTime();
-
-    var Timestamp = (new Date()).valueOf();
+    //var Timestamp = (new Date()).valueOf();
     
     var newData={   
-        arrivalTime:Timestamp,
         memberPhone:memberPhone
     } 
     console.log(newData)
