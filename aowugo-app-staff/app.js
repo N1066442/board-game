@@ -67,7 +67,6 @@ var app = express();
 // 增加引用express-session
 //--------------------------------------------------------------------
 var session = require('express-session');
-const caltime = require('./routes/utility/caltime');
 app.use(session({secret: 'recommand 128 bytes random string', cookie: { maxAge: 1*60*60*1000 }}));
 //--------------------------------------------------------------------
 
